@@ -1,5 +1,4 @@
 // QUESTION 1 - Flatten 2D Array
-/* 
 function flattenArray(twoDArray) {
     const result = [];
 
@@ -13,13 +12,12 @@ function flattenArray(twoDArray) {
     return result;
 }
 
-// Example
 console.log(flattenArray([[1, 2, 3], [4, 5], [6, 7, 8, 9]]));
 // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9] */
 
 
 // QUESTION 2 - Shared Elements Between 3 Arrays
-/* function sharedElements(arr1, arr2, arr3) {
+function sharedElements(arr1, arr2, arr3) {
     const result = [];
 
     for (let i = 0; i < arr1.length; i++) {
@@ -32,38 +30,17 @@ console.log(flattenArray([[1, 2, 3], [4, 5], [6, 7, 8, 9]]));
 
     return result;
 }
-
-// Example
 console.log(sharedElements([1, 2, 3, 4], [3, 4, 5], [3, 4, 5, 6]));
-// Output: [3, 4] */
+// Output: [3, 4]
 
 
-/* // QUESTION 3 - Unique Elements Without Set or Filter
+// QUESTION 3 - Unique Elements Without Set or Filter
 function uniqueElements(arr) {
     const unique = [];
-    for (let i = 0; i < arr.length; i++) {
-        let exists = false;
-        for (let j = 0; j < unique.length; j++) {
-            if (arr[i] === unique[j]) {
-                exists = true;
-                break;
-            }
-        }
-        if (!exists) {
-            unique.push(arr[i]);
-        }
-    }
-    return unique;
-}
- */
-
-/* function uniqueElements(arr) {
-    const unique = [];
 
     for (let i = 0; i < arr.length; i++) {
         let exists = false;
 
-        // check if value already exists inside unique[]
         for (let j = 0; j < unique.length; j++) {
             if (arr[i] === unique[j]) {
                 exists = true;
@@ -84,7 +61,7 @@ console.log(uniqueElements([1, 3, 2, 3, 4, 5, 4, 2, 5, 6]));
 // Output: [1, 3, 2, 4, 5, 6] */
 
 
-
+//QUESTION 4 — Convert Kebab-case to CamelCase
 function kebabToCamel(str) {
     const parts = str.split("-");
     let camel = parts[0];  // keep first word as it is
