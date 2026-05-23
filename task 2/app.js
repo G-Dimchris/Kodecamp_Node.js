@@ -55,8 +55,6 @@ function uniqueElements(arr) {
 
     return unique;
 }
-
-// Example
 console.log(uniqueElements([1, 3, 2, 3, 4, 5, 4, 2, 5, 6]));
 // Output: [1, 3, 2, 4, 5, 6] */
 
@@ -64,7 +62,7 @@ console.log(uniqueElements([1, 3, 2, 3, 4, 5, 4, 2, 5, 6]));
 //QUESTION 4 — Convert Kebab-case to CamelCase
 function kebabToCamel(str) {
     const parts = str.split("-");
-    let camel = parts[0];  // keep first word as it is
+    let camel = parts[0]; 
 
     for (let i = 1; i < parts.length; i++) {
         let word = parts[i];
@@ -73,7 +71,5 @@ function kebabToCamel(str) {
 
     return camel;
 }
-
-// Example
 console.log(kebabToCamel("hello-there"));
 // Output: helloThere
