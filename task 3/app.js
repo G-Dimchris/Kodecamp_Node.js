@@ -24,7 +24,7 @@ getGitHubUser("G-Dimchris")
 
 // QUESTION 2
 
-class Dimchris_Accessories {
+class KCStore {
   constructor() {
     this.products = [];
   }
@@ -63,8 +63,7 @@ class Dimchris_Accessories {
 }
 
 
-
-const store = new Dimchris_Accessories();
+const store = new KCStore();
 
 store.addProduct({
   id: 1,
@@ -76,6 +75,12 @@ store.addProduct({
   id: 2,
   name: "iPhone",
   price: 2000000
+});
+
+store.addProduct({
+  id: 3,
+  name: "Tablet",
+  price: 1000000
 });
 
 store.viewProducts();
