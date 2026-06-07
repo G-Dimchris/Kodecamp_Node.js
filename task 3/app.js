@@ -18,3 +18,72 @@ async function getGitHubUser() {
 
 getGitHubUser("G-Dimchris")
   .then(user => console.log(user));
+
+
+
+
+// QUESTION 2
+
+class Dimchris_Accessories {
+  constructor() {
+    this.products = [];
+  }
+
+  addProduct(product) {
+    this.products.push(product);
+    console.log(`${product.name} added successfully`);
+  }
+
+  viewProducts() {
+    console.log(this.products);
+  }
+
+  updateProduct(id, updatedData) {
+    const product = this.products.find(
+      (item) => item.id === id
+    );
+
+    if (!product) {
+      console.log("Product not found");
+      return;
+    }
+
+    Object.assign(product, updatedData);
+
+    console.log("Product updated successfully");
+  }
+
+  deleteProduct(id) {
+    this.products = this.products.filter(
+      (item) => item.id !== id
+    );
+
+    console.log("Product deleted successfully");
+  }
+}
+
+
+
+const store = new Dimchris_Accessories();
+
+store.addProduct({
+  id: 1,
+  name: "Hp Laptop",
+  price: 500000
+});
+
+store.addProduct({
+  id: 2,
+  name: "iPhone",
+  price: 2000000
+});
+
+store.viewProducts();
+
+store.updateProduct(1, {
+  price: 550000
+});
+
+store.deleteProduct(2);
+
+store.viewProducts();
