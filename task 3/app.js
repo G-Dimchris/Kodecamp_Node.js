@@ -1,7 +1,7 @@
 // QUESTION 1
 // Function to get GitHub user details
 
-async function getGitHubUser() {
+async function GitUser() {
   try {
     const response = await fetch("https://api.github.com/users/G-Dimchris");
     if (!response.ok) {
@@ -16,13 +16,14 @@ async function getGitHubUser() {
   }
 }
 
-getGitHubUser("G-Dimchris")
+GitUser("G-Dimchris")
   .then(user => console.log(user));
 
 
 
 
 // QUESTION 2
+//Program for a class named KCStore that has "products" as it's property.
 
 class KCStore {
   constructor() {
@@ -31,7 +32,7 @@ class KCStore {
 
   addProduct(product) {
     this.products.push(product);
-    console.log(`${product.name} added successfully`);
+    console.log("{product.name} added successfully");
   }
 
   viewProducts() {
