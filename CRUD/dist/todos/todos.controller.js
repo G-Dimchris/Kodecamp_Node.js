@@ -11,26 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a, _b, _c, _d;
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TodoController = void 0;
 const common_1 = require("@nestjs/common");
 const todo_service_1 = require("./todo.service");
 const create_todo_dto_1 = require("./dto/create-todo.dto");
 const update_todo_dto_1 = require("./dto/update-todo.dto");
-const todo_entity_1 = require("./todo.entity");
 let TodoController = class TodoController {
     constructor(todoService) {
         this.todoService = todoService;
+    }
+    create(createTodoDto) {
+        return this.todoService.create(createTodoDto);
     }
     findAll() {
         return this.todoService.findAll();
     }
     findOne(id) {
         return this.todoService.findOne(id);
-    }
-    create(createTodoDto) {
-        return this.todoService.create(createTodoDto);
     }
     update(id, updateTodoDto) {
         return this.todoService.update(id, updateTodoDto);
@@ -41,37 +40,35 @@ let TodoController = class TodoController {
 };
 exports.TodoController = TodoController;
 __decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_todo_dto_1.CreateTodoDto]),
+    __metadata("design:returntype", void 0)
+], TodoController.prototype, "create", null);
+__decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Array)
+    __metadata("design:returntype", void 0)
 ], TodoController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", typeof (_b = typeof todo_entity_1.Todo !== "undefined" && todo_entity_1.Todo) === "function" ? _b : Object)
+    __metadata("design:returntype", void 0)
 ], TodoController.prototype, "findOne", null);
-__decorate([
-    (0, common_1.Post)(),
-    HttpCode(HttpStatus.CREATED),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_todo_dto_1.CreateTodoDto]),
-    __metadata("design:returntype", typeof (_c = typeof todo_entity_1.Todo !== "undefined" && todo_entity_1.Todo) === "function" ? _c : Object)
-], TodoController.prototype, "create", null);
 __decorate([
     Put(':id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_todo_dto_1.UpdateTodoDto]),
-    __metadata("design:returntype", typeof (_d = typeof todo_entity_1.Todo !== "undefined" && todo_entity_1.Todo) === "function" ? _d : Object)
+    __metadata("design:returntype", void 0)
 ], TodoController.prototype, "update", null);
 __decorate([
     (0, common_1.Delete)(':id'),
-    HttpCode(HttpStatus.OK),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),

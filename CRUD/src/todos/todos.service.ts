@@ -6,59 +6,14 @@ import { UpdateTodoDto } from './dto/update-todo.dto';
 
 @Injectable()
 export class TodoService {
-  private todos: Todo[] = [];
+  
+  Todo = [];
 
-  findAll(): Todo[] {
-    return this.todos;
+  findAllTodos() {
+    return this.users;
   }
 
-  findOne(id: string): Todo {
-    const todo = this.todos.find(todo => todo.id === id);
-    if (!todo) {
-      throw new NotFoundException(`Todo with ID ${id} not found`);
-    }
-    return todo;
-  }
-
-  create(createTodoDto: CreateTodoDto): Todo {
-    const newTodo = new Todo({
-      id: uuidv4(),
-      title: createTodoDto.title,
-      description: createTodoDto.description,
-      status: createTodoDto.status || 'pending',
-    });
-    this.todos.push(newTodo);
-    return newTodo;
-  }
-
-  update(id: string, updateTodoDto: UpdateTodoDto): Todo {
-    const todoIndex = this.todos.findIndex(todo => todo.id === id);
-    
-    if (todoIndex === -1) {
-      throw new NotFoundException(`Todo with ID ${id} not found`);
-    }
-
-    const existingTodo = this.todos[todoIndex];
-    
-    // Update only the fields that are provided
-    const updatedTodo = {
-      ...existingTodo,
-      ...updateTodoDto,
-      updatedAt: new Date(),
-    };
-
-    this.todos[todoIndex] = updatedTodo;
-    return updatedTodo;
-  }
-
-  remove(id: string): { message: string } {
-    const todoIndex = this.todos.findIndex(todo => todo.id === id);
-    
-    if (todoIndex === -1) {
-      throw new NotFoundException(`Todo with ID ${id} not found`);
-    }
-
-    this.todos.splice(todoIndex, 1);
-    return { message: `Todo with ID ${id} deleted successfully` };
+  getUserById(id: string) {
+    return "User by ID";
   }
 }
