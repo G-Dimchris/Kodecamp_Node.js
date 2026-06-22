@@ -6,27 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsersService = void 0;
+exports.TodosModule = void 0;
 const common_1 = require("@nestjs/common");
-let UsersService = class UsersService {
-    create(createUserDto) {
-        return 'This action adds a new user';
-    }
-    findAll() {
-        return `This action returns all users`;
-    }
-    findOne(id) {
-        return `This action returns a #${id} user`;
-    }
-    update(id, updateUserDto) {
-        return `This action updates a #${id} user`;
-    }
-    remove(id) {
-        return `This action removes a #${id} user`;
-    }
+const todos_service_1 = require("./todos.service");
+const todos_controller_1 = require("./todos.controller");
+let TodosModule = class TodosModule {
 };
-exports.UsersService = UsersService;
-exports.UsersService = UsersService = __decorate([
-    (0, common_1.Injectable)()
-], UsersService);
-//# sourceMappingURL=users.service.js.map
+exports.TodosModule = TodosModule;
+exports.TodosModule = TodosModule = __decorate([
+    (0, common_1.Module)({
+        controllers: [todos_controller_1.TodosController],
+        providers: [todos_service_1.TodosService],
+    })
+], TodosModule);
+//# sourceMappingURL=todos.module.js.map
